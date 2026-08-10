@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: resume-agent
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+    mcp:
+      client:
+        name: resume-agent-client
+        version: 1.0.0
+        tool-callbacks-enabled: true
+        streamable:
+          http:
+            connections:
+              news-server:
+                url: http://localhost:8090
